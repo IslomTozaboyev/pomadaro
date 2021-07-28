@@ -13,6 +13,10 @@ const Pomodaro = (props) => {
     const [isWorkking, setisworking] = useState(true);
     const [status, setstatus] = useState(false);
 
+    const reflew = () => {
+        window.location.reload()
+    }
+
     useEffect(() => {
         status && setTimeout(() => {
             if (second > 0) setsecond(second - 1);
@@ -49,7 +53,7 @@ const Pomodaro = (props) => {
              <div>
                 <button className="btn fw-bold mt-5 me-4" onClick={() => setstatus(true)}>Start</button>
                 <button className="btn fw-bold mt-5 me-4" onClick={() => setstatus(false)}>Stop</button>
-            <button className="btn fw-bold mt-5">
+            <button className="btn fw-bold mt-5" onClick={reflew}>
                 <FontAwesomeIcon icon={faRedoAlt}/>
                 </button>
             </div>
